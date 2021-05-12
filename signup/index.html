@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/acf35067e0.js" crossorigin="anonymous"></script>
+    <title>Sign up | Weby</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Goldman&display=swap');
+  #signupForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70vh;
+    font-size: 30px;
+  }
+  sign {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+  }
+  .accitem {
+    padding-bottom: 10px;
+  }
+  .text {
+      height: 4vh;
+      width: 25vh;
+      padding: 7px;
+      border: 0;
+      border-radius: 100px;
+      border-bottom: solid 1px lightgray;
+      text-align: center;
+      font-family: "Goldman";
+      outline: 0;
+      box-shadow: rgb(0, 0, 0, 0.6) 0 2px 15px;
+  }
+  .text:focus {border-color: red;box-decoration-break: unset;border-radius: 100px;}
+  .text:hover {border-color: red;}
+  
+  #btnsignup {
+    background-color: #8c8b88;
+    color: black;
+    padding: 16px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    border-radius: 100px;
+    font-family: "Goldman";
+    outline: 0;
+  }
+  
+  #btnsignup:hover {
+    opacity: 0.8;
+  }
+  .profile {
+    width: 200px;
+  }
+body {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    overflow-x: hidden;
+    font-family: "Goldman";
+}
+#loading {display: none;}
+
+    </style>
+</head>
+<body>
+<div id="signupForm">
+        <sign class="signup">
+            <span id="title">Sign up on Weby</span>
+            <br>
+            
+            <div class="accitem">
+                <span><i class="fa fa-user fa-fw"></i></span>
+                <input class="text" type="text" id="username" placeholder="Username" maxlength="15" required="required">
+            </div> 
+
+            <div class="accitem">
+                <span><i class="fa fa-key fa-fw"></i></span>
+                <input class="text" type="password" id="password" placeholder="Password" maxlength="20" required="required">
+            </div>
+            
+            <div class="accitem">
+                <span><i class="fa fa-birthday-cake fa-fw"></i></span>
+                <input class="text" type="date" id="birthdate" placeholder="Birthdate" required="required">
+              </div>
+            <div class="accitem">
+                <span><i class="fa fa-envelope fa-fw"></i></span>
+                <input class="text" type="email" id="email" placeholder="Email" required="required">
+            </div>
+
+            <div class="accitem">
+              <span><i class="fa fa-id-card fa-fw"></i></span>
+              <input class="text" type="text" id="firstName" placeholder="First Name" required="required">
+              <input class="text" type="text" id="lastName" placeholder="Last Name" required="required">
+            </div>
+            <div id="log" style="text-align: center;color: red;"></div>
+            <button id="btnsignup" onclick="signUp()">Sign Up</button>
+        </sign>
+</div>
+    <!--Firebase & Firestore-->
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+    <script src="./../../../firestore/firebase.js"></script>
+    <!--Filepond-->
+    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+    <script src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.min.js"></script>
+    <script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.min.js"></script>
+    <script src="https://unpkg.com/filepond-plugin-image-exif-orientation/dist/filepond-plugin-image-exif-orientation.min.js"></script>
+    <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.js"></script>
+    <script src="./../../../firestore/filepond.js"></script>
+    
+</body>
+</html>

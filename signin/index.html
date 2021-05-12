@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/acf35067e0.js" crossorigin="anonymous"></script>
+    <title>Sign in | Weby</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Goldman&display=swap');
+      #signinForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70vh;
+    font-size: 30px;
+  }
+  sign {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+  }
+  .accitem {
+    padding-bottom: 10px;
+  }
+  .text {
+      height: 4vh;
+      width: 25vh;
+      padding: 7px;
+      border: 0;
+      border-radius: 100px;
+      border-bottom: solid 1px lightgray;
+      text-align: center;
+      font-family: "Goldman";
+      outline: 0;
+      box-shadow: rgb(0, 0, 0, 0.6) 0 2px 15px;
+  }
+  .text:focus {border-color: red;box-decoration-break: unset;border-radius: 100px;}
+  .text:hover {border-color: red;}
+  
+  #btnsignin {
+    background-color: #8c8b88;
+    color: black;
+    padding: 16px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    border-radius: 100px;
+    font-family: "Goldman";
+    outline: 0;
+  }
+  #btnsignin:hover {
+    opacity: 0.8;
+  }
+body {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    overflow-x: hidden;
+    font-family: "Goldman";
+}
+#loading {display: none;}
+    </style>
+</head>
+<body>
+<div id="signinForm">
+        <sign class="signin">
+            <span id="title">Sign in on Weby</span>
+            <br>
+            <div class="accitem">
+                <span><i class="fa fa-user fa-fw"></i></span>
+                <input class="text" type="text" id="username" placeholder="Username" maxlength="15" required="required">
+            </div> 
+            <div class="accitem">
+                <span><i class="fa fa-key fa-fw"></i></span>
+                <input class="text" type="password" id="password" placeholder="Password" maxlength="20" required="required">
+            </div>
+            <div class="accitem">
+                <span><i class="fa fa-envelope fa-fw"></i></span>
+                <input class="text" type="email" id="email" placeholder="Email" required="required">
+            </div>
+            <div id="log" style="text-align: center;color: red;"></div>
+            <button id="btnsignin" onclick="signIn()">Sign In</button>
+        </sign>
+</div>
+    <!--Firebase & Firestore-->
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+    <script src="./../../firestore/firebase.js"></script>
+    
+</body>
+</html>
